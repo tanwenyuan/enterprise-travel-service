@@ -1,0 +1,22 @@
+spring:
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      use-new-id-generator-mappings: false
+      ddl-auto: create
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    hikari:
+      maximum-pool-size: 10
+    url: jdbc:mysql://localhost:60000/travel_db?characterEncoding=utf8
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      spring.json.use.type.headers: true
+      security.protocol: PLAINTEXT
+    consumer:
+      group-id: test
+      auto-offset-reset: earliest
+    travel-invoice-topic: travel-invoice-topic

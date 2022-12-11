@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: enterprise-travel-service
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/travel_db?characterEncoding=utf8&createDatabaseIfNotExist=true&rewriteBatchedStatements=true
+    username: root
+    password: root
+    hikari:
+      minimum-idle: 50
+      maximum-pool-size: 200
